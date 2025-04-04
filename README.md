@@ -1,7 +1,7 @@
-# Cyberpunk Threat Map
+# Threat Map
 
 ## Overview
-The Cyberpunk Threat Map is a project that visualizes various threats in a cyberpunk-themed environment. It provides an interactive interface for users to explore different threats and their locations.
+The Threat Map is a project that visualizes various threats in a cyberpunk-themed environment. It provides an interactive interface for users to explore different threats and their locations.
 
 ## Features
 - Interactive map displaying various threats.
