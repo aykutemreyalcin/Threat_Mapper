@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEON THREAT MATRIX v2.0</title>
+  <link rel="stylesheet" href="/static/syyle.css">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <div id="matrix-bg"></div>
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+  <div class="terminal-overlay">
+    <header>
+      <div class="corner top-left"></div>
+      <div class="corner top-right"></div>
+      <h1 class="glitch" data-text="NEON THREAT MATRIX">NEON THREAT MATRIX</h1>
+      <div class="subtitle">REAL-TIME INTRUSION DETECTION SYSTEM</div>
+      <div class="neon-divider"></div>
+      <div class="system-info">
+        <span class="sys-stat">STATUS: <span class="online">ACTIVE</span></span>
+        <span class="sys-stat">THREAT LEVEL: <span class="threat-low">LOW</span></span>
+        <span class="sys-stat">LAST UPDATE: <span class="update-time">--:--:--</span></span>
+      </div>
+    </header>
+
+    <main>
+      <section class="dashboard">
+        <div class="panel threat-log">
+          <div class="panel-header">
+            <div class="panel-title">THREAT LOG</div>
+            <div class="panel-controls">
+              <div class="control-btn active"></div>
+              <div class="control-btn"></div>
+              <div class="control-btn"></div>
+            </div>
+          </div>
+          <div id="log-box" class="log-box">
+            <!-- Log entries will appear here -->
+          </div>
+        </div>
+
+        <div class="panel stats">
+          <div class="panel-header">
+            <div class="panel-title">THREAT STATISTICS</div>
+          </div>
+          <div class="stat-grid">
+            <div class="stat-item">
+              <div class="stat-value" id="total-threats">0</div>
+              <div class="stat-label">TOTAL THREATS</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="active-threats">0</div>
+              <div class="stat-label">ACTIVE NOW</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="port-scans">0</div>
+              <div class="stat-label">PORT SCANS</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value" id="brute-force">0</div>
+              <div class="stat-label">BRUTE FORCE</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="world-map">
+        <div class="map-container">
+          <div class="map-overlay"></div>
+          <div class="threat-dots" id="threat-dots"></div>
+        </div>
+        <div class="map-legend">
+          <div class="legend-item"><span class="dot port-scan"></span> PORT SCAN</div>
+          <div class="legend-item"><span class="dot brute-force"></span> BRUTE FORCE</div>
+          <div class="legend-item"><span class="dot ddos"></span> DDOS</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="corner bottom-left"></div>
+      <div class="corner bottom-right"></div>
+      <div class="status-bar">
+        <div class="status-left">
+          <span class="status-item">SYSTEM: <span class="online">OPERATIONAL</span></span>
+          <span class="status-item">UPTIME: <span id="uptime">00:00:00</span></span>
+        </div>
+        <div class="status-right">
+          <span class="status-item">VERSION: 2.3.7</span>
+          <span class="status-item">© 2077 NEON SECURITY</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/static/client.js"></script>
+</body>
+</html>
